@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Tokyo 72 Microseasons / 東京七十二候"
+type: dataset
+version: "0.4"
+date-released: 2026-08-27
+url: "https://github.com/rhodanus2179/tokyo-72kou"
+authors:
+  - name: "Tokyo 72 Kou contributors"
+license: CC-BY-4.0
