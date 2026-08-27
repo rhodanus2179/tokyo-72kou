@@ -1,1 +1,31 @@
 source_id,kou_id,title,publisher,url,observed_date,accessed_date,note
+S001,6,浜離宮恩賜庭園 1月下旬のスイセン,東京都公園協会,https://www.tokyo-park.or.jp/park/hama-rikyu/news/2024/54211.html,2024-01-31,2026-08-27,1月下旬のスイセン見頃を確認
+S002,13,小山内裏公園 3月上旬の自然情報,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2024/3_3.html,2024-03-03,2026-08-27,ツクシ出現の時期を確認
+S003,15,小山内裏公園 3月上旬の花,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2021/48109.html,2021-03-07,2026-08-27,ジンチョウゲの開花・香りの時期を確認
+S004,18,小山内裏公園 早春のチョウ,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2022/49812.html,2022-02-27,2026-08-27,2月末の早い個体を例外とし通常は3月後半という記述を候時期検討に利用
+S005,19,小山内裏公園 4月上旬のスミレ類,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2024/4_4_1.html,2024-04-01,2026-08-27,複数のスミレ類が見られる時期を確認
+S006,23,見ごろの花 春,東京都公園協会,https://www.tokyo-park.or.jp/special/migoro/spring.html,,2026-08-27,ハナミズキの見頃を4〜5月として確認
+S007,25,東京港野鳥公園 キビタキ初認,東京港野鳥公園,https://wbsj-wildbirdpark.blog.jp/archives/1083457367.html,2026-04-11,2026-08-27,2026年のキビタキ初認を確認しGW前後の囀り候の根拠に利用
+S008,28,東京港野鳥公園 ホトトギス確認,東京港野鳥公園,https://wbsj-wildbirdpark.blog.jp/archives/1083527307.html,2026-05-15,2026-08-27,5月中旬のホトトギス確認を候時期の根拠に利用
+S009,30,小山内裏公園 5月下旬のドクダミ,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2026/5_4_5_26.html,2026-05-26,2026-08-27,5月下旬のドクダミ開花を確認
+S010,35,小峰公園 ネジバナの開花,東京都公園協会,https://www.tokyo-park.or.jp/park/komine/news/nature/2023/52673.html,2023-06-16,2026-08-27,6月中旬から開花が始まることを確認
+S011,47,代々木公園 8月のサルスベリ,東京都公園協会,https://www.tokyo-park.or.jp/park/yoyogi/news/2026/8_18.html,2026-08-18,2026-08-27,8月中旬の見頃を確認
+S012,55,見ごろの花 秋,東京都公園協会,https://www.tokyo-park.or.jp/special/migoro/autumn.html,,2026-08-27,ススキの見頃を9〜10月として確認
+S013,57,小山内裏公園 モズの高鳴き,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2024/10_2_10_13.html,2024-10-13,2026-08-27,10月中旬のモズ高鳴きを確認
+S014,61,小山内裏公園 11月初めのモミジバフウ,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2022/51362.html,2022-11-02,2026-08-27,10月下旬〜11月上旬が紅葉時期との記述を確認
+S015,62,東京のツグミの初認時期,日本野鳥の会東京・観察記録,https://tokyo-birdstudy.blogspot.com/2024/12/blog-post.html?m=1,,2026-08-27,東京では本来11月初め頃から初認するという整理に利用
+S016,65,小山内裏公園 11月下旬のヤツデ,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2022/51467.html,2022-11-21,2026-08-27,ヤツデの花期が12月初め頃までとの記述を確認
+S017,66,浮間公園 バードウォッチング,東京都公園協会,https://www.tokyo-park.or.jp/park/ukima/index.html,,2026-08-27,11月中旬〜下旬に400〜500羽のカモが飛来するとの記述
+S018,9,フキノトウの開花のようす,東京ズーネット,https://www.tokyo-zoo.net/topic/topics_detail?inst=&kind=news&link_num=27864,2022-02-15,2026-08-27,撮影期間2022-02-15〜03-04の開花動画を2月中旬候の参考に利用
+S019,17,さくら豆知識 東京の開花平年値,気象庁 東京管区気象台,https://www.data.jma.go.jp/tokyo/shosai/kanyoho/sakura/sakura.html,,2026-08-27,東京のソメイヨシノ開花平年日3月24日
+S020,71,東京の霜・雪・結氷の平年値,気象庁,https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_season.php?block_no=47662&day=&month=12&prec_no=44&view=&year=2021,,2026-08-27,東京の初霜平年日12月23日
+S021,72,東京の霜・雪・結氷の平年値,気象庁,https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_season.php?block_no=47662&day=&month=12&prec_no=44&view=&year=2021,,2026-08-27,東京の初氷平年日12月24日
+S022,45,ペルセウス座流星群が極大 2026年8月,国立天文台,https://www.nao.ac.jp/astro/sky/2026/08-topics03.html,2026-08-13,2026-08-27,2026年は8月13日11時頃極大・13日未明が見頃
+S023,69,ふたご座流星群が極大 2026年12月,国立天文台,https://www.nao.ac.jp/astro/sky/2026/12-topics02.html,2026-12-14,2026-08-27,2026年は12月14日23時頃極大
+S024,44,小峰公園 8月上旬のキツネノカミソリ,東京都公園協会,https://www.tokyo-park.or.jp/park/komine/news/nature/2026/9_12_1_2_2_1_1_1_1_1_1_1_1_1_1.html,2026-08-06,2026-08-27,8月上旬に見頃と明記
+S025,60,小山内裏公園 10月末のジョウビタキ,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2023/53609.html,2023-10-27,2026-08-27,10月末近くに冬鳥ジョウビタキが飛来した記録
+S026,51,ヒガンバナ,東京都公園協会 神代植物公園,https://www.tokyo-park.or.jp/park/jindai/flora/detail/f_169.html,,2026-08-27,見頃の季節を9月中旬とする公式植物情報
+S027,5,小山内裏公園 1月下旬の梅,東京都公園協会,https://www.tokyo-park.or.jp/park/oyamadairi/news/2026/1_1_26.html,2026-01-26,2026-08-27,1月下旬に白梅が見頃・紅梅も開花している記録
+S028,50,白露 9月8日〜22日の見どころ,東京都公園協会 小石川後楽園,https://www.tokyo-park.or.jp/park/koishikawakorakuen/news/2023/53219.html,2023-09-14,2026-08-27,夜の気温が下がり露ができ始める頃との季節解説
+S029,53,小石川後楽園 9月24日の稲田,東京都公園協会,https://www.tokyo-park.or.jp/park/koishikawakorakuen/news/2023/53334.html,2023-09-24,2026-08-27,黄金色に実った稲穂を確認
+S030,32,過去の梅雨入りと梅雨明け 関東甲信,気象庁,https://www.data.jma.go.jp/cpd/baiu/kako_baiu09.html,,2026-08-27,関東甲信の梅雨入り平年は6月7日頃
