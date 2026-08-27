@@ -2,68 +2,59 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#edf4ec">
 <title>東京七十二候</title>
 <style>
-:root{--bg:#f1eee5;--card:#fffdf7;--fg:#2f342e;--sub:#687066;--accent:#8a755c}
-*{box-sizing:border-box} body{margin:0;font-family:ui-serif,"Hiragino Mincho ProN","Yu Mincho",serif;background:var(--bg);color:var(--fg);transition:.5s}
-main{max-width:760px;margin:auto;padding:32px 20px 64px}.eyebrow{font:600 12px ui-sans-serif,sans-serif;letter-spacing:.16em;color:var(--sub)}
-.card{margin-top:18px;background:color-mix(in srgb,var(--card) 90%,transparent);border:1px solid color-mix(in srgb,var(--fg) 12%,transparent);border-radius:24px;padding:28px;box-shadow:0 16px 50px #0000000b}
-h1{font-size:clamp(34px,8vw,60px);line-height:1.25;margin:8px 0}.reading{font:14px ui-sans-serif,sans-serif;color:var(--sub);letter-spacing:.08em}
-.meta{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0;font:13px ui-sans-serif,sans-serif;color:var(--sub)}
-.pill{padding:7px 10px;border:1px solid #0002;border-radius:999px}.nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
-button,input{font:inherit}button{border:0;border-radius:999px;padding:10px 15px;background:var(--fg);color:var(--bg);cursor:pointer}
-input{padding:8px 10px;border:1px solid #0002;border-radius:10px;background:#fff8}.note{margin-top:26px;color:var(--sub);font-size:14px;line-height:1.8}
-footer{margin-top:32px;font:12px ui-sans-serif,sans-serif;color:var(--sub)}
-body.spring.morning{--bg:#edf4ec;--card:#fbfdf9;--fg:#27372d;--accent:#71917b}
-body.spring.day{--bg:#e6f1e4;--card:#fcfefb;--fg:#26362d}
-body.spring.evening{--bg:#f2e8e1;--card:#fffaf6;--fg:#3b302d}
-body.spring.night{--bg:#1d2b27;--card:#263731;--fg:#eef2eb;--sub:#b7c4bb}
-body.summer.morning{--bg:#e8f3ef;--card:#fbfffd;--fg:#214039}
-body.summer.day{--bg:#dff0eb;--card:#f9fffc;--fg:#173a32}
-body.summer.evening{--bg:#efdfd2;--card:#fff8f2;--fg:#3f302b}
-body.summer.night{--bg:#17292b;--card:#21383a;--fg:#edf5f0;--sub:#b8ccca}
-body.autumn.morning{--bg:#f1ede3;--card:#fffdf8;--fg:#42372b}
-body.autumn.day{--bg:#ede8dc;--card:#fffdf8;--fg:#3e3328}
-body.autumn.evening{--bg:#ecdcd1;--card:#fff8f3;--fg:#44312b}
-body.autumn.night{--bg:#252a28;--card:#303733;--fg:#f1ebdf;--sub:#c9c0b1}
-body.winter.morning{--bg:#eef1f1;--card:#fbfdfd;--fg:#303a3d}
-body.winter.day{--bg:#e9eeee;--card:#fbfdfd;--fg:#2d383b}
-body.winter.evening{--bg:#e8e2df;--card:#fcf8f6;--fg:#383235}
-body.winter.night{--bg:#1c252b;--card:#263139;--fg:#edf2f4;--sub:#b9c4c9}
+:root{--bg:#f1eee5;--card:#fffdf7;--fg:#2f342e;--sub:#687066;--accent:#8a755c;--line:#00000018}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-serif,"Hiragino Mincho ProN","Yu Mincho",serif;background:var(--bg);color:var(--fg);transition:background .45s,color .45s;min-height:100vh}
+main{max-width:760px;margin:auto;padding:calc(28px + env(safe-area-inset-top)) 20px calc(64px + env(safe-area-inset-bottom))}.eyebrow{font:700 12px ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;color:var(--sub)}
+.hero{display:flex;justify-content:space-between;gap:16px;align-items:end}.subhead{font:13px ui-sans-serif,system-ui,sans-serif;color:var(--sub);margin-top:6px;line-height:1.6}.card{margin-top:18px;background:color-mix(in srgb,var(--card) 91%,transparent);border:1px solid color-mix(in srgb,var(--fg) 12%,transparent);border-radius:26px;padding:28px;box-shadow:0 16px 50px #0000000b;backdrop-filter:blur(10px)}
+h1{font-size:clamp(36px,8vw,60px);line-height:1.22;margin:10px 0 4px;letter-spacing:.02em}.reading{font:14px ui-sans-serif,system-ui,sans-serif;color:var(--sub);letter-spacing:.08em}.meta{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 22px;font:13px ui-sans-serif,system-ui,sans-serif;color:var(--sub)}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#ffffff16}
+.date-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.date-row label{display:flex;align-items:center;gap:10px}.date-row input{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--card) 90%,white);color:#222}.nav{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;margin-top:20px}.nav button:nth-child(1){justify-self:start}.nav button:nth-child(3){justify-self:end}
+button{font:600 14px ui-sans-serif,system-ui,sans-serif;border:0;border-radius:999px;padding:11px 16px;background:var(--fg);color:var(--bg);cursor:pointer;transition:transform .12s,opacity .12s}button:hover{opacity:.9}button:active{transform:scale(.97)}button.secondary{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.context{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.context div{padding:12px;border:1px solid var(--line);border-radius:16px;font:12px ui-sans-serif,system-ui,sans-serif;color:var(--sub)}.context strong{display:block;color:var(--fg);font-size:14px;margin-top:4px}
+.note{margin-top:28px;color:var(--sub);font-size:14px;line-height:1.9}.notice{margin-top:16px;padding:14px 16px;border-left:3px solid var(--accent);background:#ffffff22;border-radius:10px;font:13px ui-sans-serif,system-ui,sans-serif;color:var(--sub);line-height:1.7}footer{margin-top:34px;font:12px ui-sans-serif,system-ui,sans-serif;color:var(--sub);display:flex;gap:14px;flex-wrap:wrap}a{color:inherit}
+body.spring.morning{--bg:#edf4ec;--card:#fbfdf9;--fg:#27372d;--sub:#697b6d;--accent:#71917b}body.spring.day{--bg:#e6f1e4;--card:#fcfefb;--fg:#26362d;--sub:#647569;--accent:#71917b}body.spring.evening{--bg:#f2e8e1;--card:#fffaf6;--fg:#3b302d;--sub:#796b65;--accent:#a47d68}body.spring.night{--bg:#1d2b27;--card:#263731;--fg:#eef2eb;--sub:#b7c4bb;--accent:#91ad9a}
+body.summer.morning{--bg:#e8f3ef;--card:#fbfffd;--fg:#214039;--sub:#627c75;--accent:#5f8f84}body.summer.day{--bg:#dff0eb;--card:#f9fffc;--fg:#173a32;--sub:#55746b;--accent:#4f8879}body.summer.evening{--bg:#efdfd2;--card:#fff8f2;--fg:#3f302b;--sub:#7f6b61;--accent:#aa775d}body.summer.night{--bg:#17292b;--card:#21383a;--fg:#edf5f0;--sub:#b8ccca;--accent:#7da7a2}
+body.autumn.morning{--bg:#f1ede3;--card:#fffdf8;--fg:#42372b;--sub:#7d7468;--accent:#96775a}body.autumn.day{--bg:#ede8dc;--card:#fffdf8;--fg:#3e3328;--sub:#786d61;--accent:#927155}body.autumn.evening{--bg:#ecdcd1;--card:#fff8f3;--fg:#44312b;--sub:#806b63;--accent:#a46652}body.autumn.night{--bg:#252a28;--card:#303733;--fg:#f1ebdf;--sub:#c9c0b1;--accent:#b49b78}
+body.winter.morning{--bg:#eef1f1;--card:#fbfdfd;--fg:#303a3d;--sub:#6f797c;--accent:#71858c}body.winter.day{--bg:#e9eeee;--card:#fbfdfd;--fg:#2d383b;--sub:#697578;--accent:#6e848b}body.winter.evening{--bg:#e8e2df;--card:#fcf8f6;--fg:#383235;--sub:#786f72;--accent:#8a7379}body.winter.night{--bg:#1c252b;--card:#263139;--fg:#edf2f4;--sub:#b9c4c9;--accent:#879da7}
+@media(max-width:560px){main{padding-left:14px;padding-right:14px}.card{padding:22px 18px;border-radius:22px}.hero{display:block}.nav{grid-template-columns:1fr 1fr}.nav button{width:100%}.nav button:nth-child(2){grid-column:1/-1;grid-row:2}.nav button:nth-child(3){justify-self:stretch}.context{grid-template-columns:1fr}.date-row{align-items:stretch}.date-row label{width:100%;justify-content:space-between}.date-row input{flex:1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-<div class="eyebrow">TOKYO 72 MICROSEASONS · v0.4</div>
-<div class="card">
+<header class="hero"><div><div class="eyebrow">TOKYO 72 MICROSEASONS</div><div class="subhead">現代の東京で出会える自然から、季節を72の小さな区切りで読む。</div></div><button id="share" class="secondary" type="button">共有</button></header>
+<section class="card" aria-live="polite">
 <div id="period" class="eyebrow"></div>
 <h1 id="name">読み込み中…</h1>
 <div id="reading" class="reading"></div>
-<div class="meta"><span id="category" class="pill"></span><span id="phase" class="pill"></span></div>
-<label class="reading">日付 <input id="date" type="date"></label>
-<div class="nav"><button id="prev">← 前の候</button><button id="today">今日</button><button id="next">次の候 →</button></div>
-</div>
-<p class="note">東京七十二候は、現代の東京で出会える生物・自然現象から七十二候を組み直すオープンプロジェクトです。固定5日間は代表区間で、実際の季節は年・場所・気象によって動きます。</p>
-<footer><a href="../data/tokyo_72kou.json">dataset</a> · <a href="https://github.com/rhodanus2179/tokyo-72kou">GitHub</a></footer>
+<div class="meta"><span id="category" class="pill"></span><span id="phase" class="pill"></span><span id="confidence" class="pill"></span></div>
+<div class="date-row"><label class="reading">日付 <input id="date" type="date"></label><button id="today" class="secondary" type="button">今日に戻る</button></div>
+<div class="nav"><button id="prev" type="button">← 前の候</button><button id="random" class="secondary" type="button">別の候を見る</button><button id="next" type="button">次の候 →</button></div>
+<div class="context"><div>季節<strong id="seasonLabel">—</strong></div><div>時間帯<strong id="daypartLabel">—</strong></div><div>候番号<strong id="numberLabel">—</strong></div></div>
+</section>
+<p class="note">「東京七十二候」は、伝統的な七十二候をそのまま再現するのではなく、現代の東京で実際に気づきやすい生物・植物・気象・天文現象から、都市の季節感を組み直す試みです。</p>
+<div class="notice">表示期間は代表的な区間です。実際の開花・鳴き始め・飛来などは、年ごとの気温や降水、場所の環境条件によって前後します。</div>
+<footer><a href="../data/tokyo_72kou.json">データセット</a><a href="https://github.com/rhodanus2179/tokyo-72kou">GitHub</a><span>72候データをブラウザ内で表示</span></footer>
 </main>
 <script>
 let data=[],current=0;
 const $=id=>document.getElementById(id);
+const labels={season:{spring:'春',summer:'夏',autumn:'秋',winter:'冬'},daypart:{morning:'朝',day:'昼',evening:'夕方',night:'夜'}};
 function season(m){return [3,4,5].includes(m)?'spring':[6,7,8].includes(m)?'summer':[9,10,11].includes(m)?'autumn':'winter'}
 function daypart(h){return h<10?'morning':h<17?'day':h<20?'evening':'night'}
-function applyTheme(m){document.body.className=season(m)+' '+daypart(new Date().getHours())}
-function findIndex(d){let m=d.getMonth()+1,day=d.getDate();let i=data.findIndex(x=>x.month===m&&day>=x.start_day&&day<=x.end_day);return i<0?0:i}
-function render(i){
- current=(i+data.length)%data.length;const x=data[current];
- $('name').textContent=x.name;$('reading').textContent=x.reading;
- $('period').textContent=`${x.month}月${x.start_day}日 — ${x.month}月${x.end_day}日`;
- $('category').textContent=x.category;$('phase').textContent=x.phase;applyTheme(x.month)
-}
-function setDate(d){$('date').value=d.toISOString().slice(0,10);render(findIndex(d))}
-fetch('../data/tokyo_72kou.json').then(r=>r.json()).then(d=>{data=d;setDate(new Date())});
-$('date').addEventListener('change',e=>{const d=new Date(e.target.value+'T12:00:00');render(findIndex(d))});
-$('prev').onclick=()=>render(current-1);$('next').onclick=()=>render(current+1);$('today').onclick=()=>setDate(new Date());
+function applyTheme(m){const s=season(m),d=daypart(new Date().getHours());document.body.className=s+' '+d;$('seasonLabel').textContent=labels.season[s];$('daypartLabel').textContent=labels.daypart[d];const theme=document.querySelector('meta[name="theme-color"]');if(theme)theme.content=getComputedStyle(document.body).backgroundColor}
+function findIndex(d){const m=d.getMonth()+1,day=d.getDate();let i=data.findIndex(x=>x.month===m&&day>=x.start_day&&day<=x.end_day);if(i<0&&m===2&&day===29)i=data.findIndex(x=>x.month===2&&x.start_day===26);return i<0?0:i}
+function periodText(x){return `${x.month}月${x.start_day}日 — ${x.month}月${x.end_day}日`}
+function render(i,{syncDate=false}={}){if(!data.length)return;current=(i+data.length)%data.length;const x=data[current];$('name').textContent=x.name;$('reading').textContent=x.reading;$('period').textContent=periodText(x);$('category').textContent=x.category;$('phase').textContent=x.phase;$('confidence').textContent=`根拠 ${x.confidence}`;$('numberLabel').textContent=`${x.id} / ${data.length}`;applyTheme(x.month);document.title=`${x.name}｜東京七十二候`;if(syncDate){const y=new Date().getFullYear();$('date').value=`${y}-${String(x.month).padStart(2,'0')}-${String(x.start_day).padStart(2,'0')}`}}
+function localDateValue(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`}
+function setDate(d){$('date').value=localDateValue(d);render(findIndex(d))}
+async function shareCurrent(){const x=data[current];const text=`${x.name}（${x.reading}）\n${periodText(x)}｜東京七十二候`;try{if(navigator.share){await navigator.share({title:'東京七十二候',text,url:location.href})}else{await navigator.clipboard.writeText(text+'\n'+location.href);$('share').textContent='コピーしました';setTimeout(()=>$('share').textContent='共有',1400)}}catch(e){}}
+fetch('../data/tokyo_72kou.json').then(r=>{if(!r.ok)throw new Error('dataset');return r.json()}).then(d=>{data=d;setDate(new Date())}).catch(()=>{$('name').textContent='データを読み込めませんでした';$('reading').textContent='ページを再読み込みしてください。'});
+$('date').addEventListener('change',e=>{if(!e.target.value)return;render(findIndex(new Date(e.target.value+'T12:00:00')))});
+$('prev').onclick=()=>render(current-1,{syncDate:true});$('next').onclick=()=>render(current+1,{syncDate:true});$('today').onclick=()=>setDate(new Date());$('random').onclick=()=>render(Math.floor(Math.random()*data.length),{syncDate:true});$('share').onclick=shareCurrent;
 </script>
 </body>
 </html>
