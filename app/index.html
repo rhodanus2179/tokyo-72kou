@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>東京七十二候</title>
+<style>
+:root{--bg:#f1eee5;--card:#fffdf7;--fg:#2f342e;--sub:#687066;--accent:#8a755c}
+*{box-sizing:border-box} body{margin:0;font-family:ui-serif,"Hiragino Mincho ProN","Yu Mincho",serif;background:var(--bg);color:var(--fg);transition:.5s}
+main{max-width:760px;margin:auto;padding:32px 20px 64px}.eyebrow{font:600 12px ui-sans-serif,sans-serif;letter-spacing:.16em;color:var(--sub)}
+.card{margin-top:18px;background:color-mix(in srgb,var(--card) 90%,transparent);border:1px solid color-mix(in srgb,var(--fg) 12%,transparent);border-radius:24px;padding:28px;box-shadow:0 16px 50px #0000000b}
+h1{font-size:clamp(34px,8vw,60px);line-height:1.25;margin:8px 0}.reading{font:14px ui-sans-serif,sans-serif;color:var(--sub);letter-spacing:.08em}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0;font:13px ui-sans-serif,sans-serif;color:var(--sub)}
+.pill{padding:7px 10px;border:1px solid #0002;border-radius:999px}.nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+button,input{font:inherit}button{border:0;border-radius:999px;padding:10px 15px;background:var(--fg);color:var(--bg);cursor:pointer}
+input{padding:8px 10px;border:1px solid #0002;border-radius:10px;background:#fff8}.note{margin-top:26px;color:var(--sub);font-size:14px;line-height:1.8}
+footer{margin-top:32px;font:12px ui-sans-serif,sans-serif;color:var(--sub)}
+body.spring.morning{--bg:#edf4ec;--card:#fbfdf9;--fg:#27372d;--accent:#71917b}
+body.spring.day{--bg:#e6f1e4;--card:#fcfefb;--fg:#26362d}
+body.spring.evening{--bg:#f2e8e1;--card:#fffaf6;--fg:#3b302d}
+body.spring.night{--bg:#1d2b27;--card:#263731;--fg:#eef2eb;--sub:#b7c4bb}
+body.summer.morning{--bg:#e8f3ef;--card:#fbfffd;--fg:#214039}
+body.summer.day{--bg:#dff0eb;--card:#f9fffc;--fg:#173a32}
+body.summer.evening{--bg:#efdfd2;--card:#fff8f2;--fg:#3f302b}
+body.summer.night{--bg:#17292b;--card:#21383a;--fg:#edf5f0;--sub:#b8ccca}
+body.autumn.morning{--bg:#f1ede3;--card:#fffdf8;--fg:#42372b}
+body.autumn.day{--bg:#ede8dc;--card:#fffdf8;--fg:#3e3328}
+body.autumn.evening{--bg:#ecdcd1;--card:#fff8f3;--fg:#44312b}
+body.autumn.night{--bg:#252a28;--card:#303733;--fg:#f1ebdf;--sub:#c9c0b1}
+body.winter.morning{--bg:#eef1f1;--card:#fbfdfd;--fg:#303a3d}
+body.winter.day{--bg:#e9eeee;--card:#fbfdfd;--fg:#2d383b}
+body.winter.evening{--bg:#e8e2df;--card:#fcf8f6;--fg:#383235}
+body.winter.night{--bg:#1c252b;--card:#263139;--fg:#edf2f4;--sub:#b9c4c9}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">TOKYO 72 MICROSEASONS · v0.4</div>
+<div class="card">
+<div id="period" class="eyebrow"></div>
+<h1 id="name">読み込み中…</h1>
+<div id="reading" class="reading"></div>
+<div class="meta"><span id="category" class="pill"></span><span id="phase" class="pill"></span></div>
+<label class="reading">日付 <input id="date" type="date"></label>
+<div class="nav"><button id="prev">← 前の候</button><button id="today">今日</button><button id="next">次の候 →</button></div>
+</div>
+<p class="note">東京七十二候は、現代の東京で出会える生物・自然現象から七十二候を組み直すオープンプロジェクトです。固定5日間は代表区間で、実際の季節は年・場所・気象によって動きます。</p>
+<footer><a href="../data/tokyo_72kou.json">dataset</a> · <a href="https://github.com/rhodanus2179/tokyo-72kou">GitHub</a></footer>
+</main>
+<script>
+let data=[],current=0;
+const $=id=>document.getElementById(id);
+function season(m){return [3,4,5].includes(m)?'spring':[6,7,8].includes(m)?'summer':[9,10,11].includes(m)?'autumn':'winter'}
+function daypart(h){return h<10?'morning':h<17?'day':h<20?'evening':'night'}
+function applyTheme(m){document.body.className=season(m)+' '+daypart(new Date().getHours())}
+function findIndex(d){let m=d.getMonth()+1,day=d.getDate();let i=data.findIndex(x=>x.month===m&&day>=x.start_day&&day<=x.end_day);return i<0?0:i}
+function render(i){
+ current=(i+data.length)%data.length;const x=data[current];
+ $('name').textContent=x.name;$('reading').textContent=x.reading;
+ $('period').textContent=`${x.month}月${x.start_day}日 — ${x.month}月${x.end_day}日`;
+ $('category').textContent=x.category;$('phase').textContent=x.phase;applyTheme(x.month)
+}
+function setDate(d){$('date').value=d.toISOString().slice(0,10);render(findIndex(d))}
+fetch('../data/tokyo_72kou.json').then(r=>r.json()).then(d=>{data=d;setDate(new Date())});
+$('date').addEventListener('change',e=>{const d=new Date(e.target.value+'T12:00:00');render(findIndex(d))});
+$('prev').onclick=()=>render(current-1);$('next').onclick=()=>render(current+1);$('today').onclick=()=>setDate(new Date());
+</script>
+</body>
+</html>
