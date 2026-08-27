@@ -17,9 +17,19 @@ This project proposes a contemporary set of **72 microseasons for Tokyo**, based
 - Source of truth: [`data/tokyo_72kou.csv`](data/tokyo_72kou.csv)
 - JSON: [`data/tokyo_72kou.json`](data/tokyo_72kou.json)
 - Schema: [`data/schema.json`](data/schema.json)
+- Evidence registry: [`sources/source_registry.csv`](sources/source_registry.csv)
 - Methodology: [`docs/methodology.md`](docs/methodology.md)
+- Source policy: [`docs/sources.md`](docs/sources.md)
 - Mini app: [`app/index.html`](app/index.html)
 - Working spreadsheet: https://docs.google.com/spreadsheets/d/1-pfuBzQFIka5AtnXefup-PPtC_P2_cmz1i1W8nQ962I/edit
+
+## Web demo
+
+The repository is GitHub Pages-ready. `index.html` redirects to the self-contained viewer in `app/`, and `.nojekyll` is included.
+
+Once GitHub Pages is enabled for the `main` branch / repository root, the expected URL is:
+
+`https://rhodanus2179.github.io/tokyo-72kou/`
 
 ## Design principles
 
@@ -48,6 +58,8 @@ This project proposes a contemporary set of **72 microseasons for Tokyo**, based
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
 ├── CITATION.cff
+├── index.html
+├── .nojekyll
 ├── data/
 │   ├── tokyo_72kou.csv
 │   ├── tokyo_72kou.json
@@ -74,6 +86,12 @@ This project proposes a contemporary set of **72 microseasons for Tokyo**, based
 | `confidence` | 現時点の評価 |
 | `category` | 生物・現象カテゴリ |
 | `phase` | 開始／最盛／開始・最盛 |
+
+## Evidence
+
+候の時期や観察可能性を支える資料は `sources/source_registry.csv` に登録します。個別観察日、平年値、一般的な花期・飛来期は区別して記録し、単一資料だけで固定的な生物学的発生日を主張しません。
+
+レジストリは継続整備中です。v0.4 の72現象が現在の基準版であることと、72候すべての根拠整理が完了していることは別です。
 
 ## Licensing
 
